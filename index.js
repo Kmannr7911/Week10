@@ -1,3 +1,11 @@
+// let buttonByClassName = document.getElementsByClassName('my-class');
+// console.log(buttonsByTag);
+
+
+
+// let buttonByCSSSelector = document.querySelectorAll('.my-class');
+// console.log(buttonByCSSSelector);
+
 // let button = document.getElementById('btn');
 // let content = document.getElementById('content');
 

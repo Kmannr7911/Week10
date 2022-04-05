@@ -41,17 +41,17 @@ function getValue(id){
 }
 
 function drawDOM(){
-    let teamDIV = document.getElementById('team');
+    let teamDIV = document.getElementById('teams');
     clearElement('teamDiv');
-    for (team of teams) {
+    for (var team of teams) {
         let table = createTeamTable(team);
         let title = document.createElement('h2');
         title.innerHTML = team.name;
-        title.appendChild(createDeleteTeamButton(team));
+        title.appendChild(createDeleteTeamButton(Team));
         teamDIV.appendChild(title);
         teamDIV.appendChild(table);
-        for(member of team.members){
-            createMemberRow(team,table,member);
+        for (var member of Team.members){
+            createMemberRow(Team,table,Member);
         }
     }
 }
