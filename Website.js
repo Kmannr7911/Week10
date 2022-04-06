@@ -1,1 +1,0 @@
-let buttonByClassName = document.getElementById
