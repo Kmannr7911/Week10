@@ -4,35 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Book Log</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Digital Movie Rental Log</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body class="container">
 
-    <br>
+    <br> 
+    <div class="cotainer">
 
-   <div class="card">
-       <div class="card-body">
-           <div class="row">
-               <div class="col-sm">
-                   <div class="form-group">
-                       <label for="Movie-name">Movie Name</label>
-                       <input type="text" class="form-control" id="date-team-">
-                   </div>
-               </div>
-           </div>
-           <div>
-               <button id="new-entry class" class="btn btn-primary form-control">Create</button>
-           </div>
-       </div>
-   </div><br>
+    
+    <table id="returnLog" class="table order-list">
+        <thead>
+            <tr>
+                <td>Customer Name</td>
+                <td>Email</td>
+                <td>Movie Title</td>
+                <td> Purchase Method</td>
+                <td>Purchase Date</td>
+                <td>Return Date</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-sm-4">
+                    <input type="text" name="Customer Name" class="form-control">
+                </td>
+                <td class="col-sm-4">
+                    <input type="text" name="Email" class="form-control">
+                </td>
+                <td class="col-sm-4">
+                    <input type="text" name="Movie Title" class="form-control">
+                </td>
+                <td class="col-sm-4">
+                    <input type="text" name="Purchase Method" class="form-control">
+                </td>
+                <td class="col-sm-4">
+                    <input type="text" name="Purchase Date" class="form-control">
+                </td>
+                <td class="col-sm-4">
+                    <input type="text" name="Return Date" class="form-control">
+                </td>
+                <td class="col-sm-2">
 
-   <div id="entries">
-
-   </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" style="text-align: left;">
+                <input type="button" class="btn btn-lg btn block" id="addrow" value="Add Row">
+                </td>
+            </tr>
+            <tr></tr>
+        </tfoot>
+    </table>
+</div>    
    
-   <script src="Entry.js"></script>
-   <script src="node_modules/jquery/dist/jquery.js"></script>
-   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script>
+$(document).ready(function(){
+    var counter = 0;
+
+    $("#addrow").on("click", function(){
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols += '<td><input type = "text" class = "form-control" name="Customer Name' + counter + '"/></td>';
+        cols += '<td><input type = "text" class= "form-control" name="Email' + counter + '"/></td>';
+        cols += '<td><input type = "text" class= "form-control" name= "Movie Title' + counter + '"/></td>';
+        cols += '<td><input type = "text" class= "form-control" name= "Purchase Method' + counter + '"/></td>';
+        cols += '<td><input type = "text" class= "form-control" name= "Purchase Date' + counter + '"/></td>';
+        cols += '<td><input type = "text" class= "form-control" name= "Return Date' + counter + '" /></td>';
+
+        cols += '<td><input type="button" class= ibtnDel btn-md btn-danger" value="Delete"></td>';
+        newRow.append(cols);
+        $("table.order-list").append(newRow);
+        counter++;
+    });
+
+    $("table.order-list").on("click","ibnDel", function(){
+        $(this).closest("tr").remove();
+        counter-= 1
+    });
+
+});
+</script>
 </body>
 </html>
+

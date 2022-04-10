@@ -1,0 +1,23 @@
+{
+  "name": "week10",
+  "version": "1.0.0",
+  "description": "Files of CK Coding Assignment for Week 10",
+  "main": "Entry.html",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kmannr7911/Week10.git"
+  },
+  "keywords": [
+    "Table",
+    "Entry"
+  ],
+  "author": "CK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kmannr7911/Week10/issues"
+  },
+  "homepage": "https://github.com/Kmannr7911/Week10#readme"
+}
